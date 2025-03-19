@@ -17,6 +17,17 @@ class Game {
   }
 
   registerEvents() {
+    addEventListener('keydown', (event) => {
+      console.log(event)
+      const pressedSymbol = event.key
+          const expectedSybmol = this.currentSymbol.textContent
+  
+        if(pressedSymbol.toLowerCase() === expectedSybmol.toLowerCase()) {
+          this.success()
+        } else {
+          this.fail()
+        }
+    })
     /*
       TODO:
       Написать обработчик события, который откликается
